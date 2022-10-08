@@ -2,7 +2,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require('mongoose');
-require('dotenv').config();
 
 const homeStartingContent = "This is my Blogging Website. Blogger lets you safely store thousands of posts, photos, and more with Google. Join millions of others, Whether sharing your expertise, breaking news, or whatever’s on your mind, you’re in good company on Blogger. Sign up to discover why millions of people have published their passions here. Create your blog,";
 const aboutContent = "I am currently pursuing BTech in Computer Science at SVNIT SURAT. I am a hard working person and passionate to learn new technologies. Backend Technologies includes Node/express Js, PHP and for Frontend HTML, ReactJs, CSS";
@@ -15,7 +14,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true});
+mongoose.connect("mongodb+srv://MihirHemnani:Hop27418@cluster0.owonk.mongodb.net/?retryWrites=true&w=majority/test", {useNewUrlParser: true});
 
 const postSchema = {
   title: String,
